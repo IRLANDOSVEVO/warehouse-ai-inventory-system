@@ -2,12 +2,15 @@
 import os
 
 import pandas as pd
-from dotenv import load_dotenv
 from office365.runtime.auth.user_credential import UserCredential
 from office365.sharepoint.client_context import ClientContext
 
-# Load environment variables from .env file
-load_dotenv()
+# Load environment variables (works both locally with .env and on Streamlit Cloud with Secrets)
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 # SharePoint configuration from environment
 SITE_URL = os.getenv("SP_URL", "").strip()
@@ -27,11 +30,11 @@ def _get_context() -> ClientContext:
     """
     if not SITE_URL:
         raise ValueError(
-            "SP_URL non configurato. Aggiungi la variabile d'ambiente SP_URL nel file .env."
+            "SP_URL non configurato. Aggiungi la variabile d'ambiente SP_URL nel file .env o nei Secrets di Streamlit Cloud."
         )
     if not USERNAME or not PASSWORD:
         raise ValueError(
-            "SP_USER e SP_PASS non configurati. Controlla il file .env."
+            "SP_USER e SP_PASS non configurati. Controlla il file .env o i Secrets di Streamlit Cloud."
         )
 
     return ClientContext(SITE_URL).with_credentials(UserCredential(USERNAME, PASSWORD))
