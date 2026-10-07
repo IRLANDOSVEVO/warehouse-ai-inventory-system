@@ -1,0 +1,11 @@
+id,sku,name,category,stock,reorder_point,unit_price
+1,SKU-001,Vite M8x50,Ferramenta,150,50,2.50
+2,SKU-002,Bullone M10,Ferramenta,25,100,3.75
+3,SKU-003,Dado M8,Ferramenta,0,200,1.50
+4,SKU-004,Rondella,Ferramenta,3000,500,0.25
+5,SKU-005,Vite M6x30,Ferramenta,500,100,1.80
+6,SKU-006,Bullone M8,Ferramenta,200,75,2.20
+7,SKU-007,Guarnizione,Ferramenta,1500,300,0.50
+8,SKU-008,Molla,Ferramenta,800,200,1.10
+9,SKU-009,Chiodo 50mm,Ferramenta,5000,1000,0.15
+10,SKU-010,Vite inox M10,Ferramenta,320,80,4.50
